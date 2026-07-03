@@ -12,14 +12,13 @@ export class App {
 
   constructor() {
     window.addEventListener("message", (event) => {
-      console.log("testttttttttttttttttttttttttt1111111111111111111");
-      // if (event.origin !== "https://wordpress-domain.com") {
-      //   return;
-      // }
+      if (event.origin !== "https://wordpress-domain.com") {
+        return;
+      }
 
-      // if (event.data.type === "language") {
-      //   console.log("testttttttttttttttttttttttttt");
-      // }
+      if (event.data.type === "language") {
+        console.log("testttttttttttttttttttttttttt");
+      }
     });
   }
 }
