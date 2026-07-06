@@ -12,10 +12,7 @@ export class App {
 
   constructor() {
     window.addEventListener("message", (event) => {
-      if (event.origin !== "https://wordpress-domain.com") {
-        return;
-      }
-
+alert(event);
       if (event.data.type === "language") {
         alert("testttttttttttttttttttttttttt");
       }
