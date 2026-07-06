@@ -10,17 +10,24 @@ import { RouterOutlet } from "@angular/router";
 export class App {
   protected readonly title = signal("testttt");
 
+  private readonly messageHandler = (event: MessageEvent) => {
+    console.log('Origin:', event.origin);
+    console.log('Data:', event.data);
+
+    // Sau khi test xong thì bật lại đoạn này
+    if (event.origin !== 'https://www.aseansc.com.vn') {
+      return;
+    }
+
+    if (event.data?.type === 'language') {
+      alert(`Language: ${event.data.lang}`);
+
+      // Sau này đổi ngôn ngữ thật
+      // this.appLangService.setLang(event.data.lang);
+    }
+  };
+
   constructor() {
-    window.addEventListener("message", (event) => {
-      console.log('téttttttttttttttt');
-
-      if (event.origin !== "https://www.aseansc.com.vn") {
-        return;
-      }
-
-      alert("testttttttttttttttttttttttttt");
-      // if (event.data.type === "language") {
-      // }
-    });
+    window.addEventListener('message', this.messageHandler);
   }
 }
