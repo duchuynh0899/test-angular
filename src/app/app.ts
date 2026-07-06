@@ -12,6 +12,8 @@ export class App {
 
   constructor() {
     window.addEventListener("message", (event) => {
+      console.log('téttttttttttttttt');
+
       if (event.origin !== "https://www.aseansc.com.vn") {
         return;
       }
