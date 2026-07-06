@@ -17,7 +17,7 @@ export class App {
       }
 
       if (event.data.type === "language") {
-        console.log("testttttttttttttttttttttttttt");
+        alert("testttttttttttttttttttttttttt");
       }
     });
   }
