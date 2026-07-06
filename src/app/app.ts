@@ -12,10 +12,13 @@ export class App {
 
   constructor() {
     window.addEventListener("message", (event) => {
-alert(event);
-      if (event.data.type === "language") {
-        alert("testttttttttttttttttttttttttt");
+      if (event.origin !== "https://www.aseansc.com.vn") {
+        return;
       }
+
+      alert("testttttttttttttttttttttttttt");
+      // if (event.data.type === "language") {
+      // }
     });
   }
 }
